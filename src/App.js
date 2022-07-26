@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import 'antd/dist/antd.css';
 import { Row } from 'antd';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import NoteList from "./components/NoteList";
 import DetailNote from "./components/DetailNote";
 import CreateNote from "./components/CreateNote";
@@ -48,7 +48,7 @@ const App = () => {
 
     return (
         <Row  justify="space-evenly" style={{ marginTop: '10px'}}>
-            <BrowserRouter basename={process.env.PUBLIC_URL}>>
+            <HashRouter basename={process.env.PUBLIC_URL}>
                 <Routes>
                     <Route path="/" element={<DetailNote note={selectedNote} />} />
                     <Route path="create" element={<CreateNote saveNote={saveNote} />} />
@@ -59,7 +59,7 @@ const App = () => {
                     deleteNote={deleteNote}
                     notes={notes}
                 />
-            </BrowserRouter>
+            </HashRouter>
         </Row>
     );
 };
