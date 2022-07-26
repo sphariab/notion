@@ -21,7 +21,7 @@ const App = () => {
     }
 
     const [notes, setNotes] = useState(getNotes());
-    const [selectedNote, setSelectedNote] = useState(JSON.parse(localStorage.getItem('selectedNote')));
+    const [selectedNote, setSelectedNote] = useState(localStorage.getItem('selectedNote') || []);
 
     const updateNotes = filteredNotes => {
         localStorage.setItem('notes',  JSON.stringify(filteredNotes));
@@ -50,7 +50,7 @@ const App = () => {
         <Row  justify="space-evenly" style={{ marginTop: '10px'}}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<DetailNote note={selectedNote} />} />
+                    <Route path="/" element={<DetailNote note={selectedNote || {}} />} />
                     <Route path="create" element={<CreateNote saveNote={saveNote} />} />
                     <Route path="edit/:id" element={<EditNote saveNote={saveNote} />} exact />
                 </Routes>
