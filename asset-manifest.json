@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sphariab/notion/static/css/main.f373c4fc.css",
+    "main.js": "/sphariab/notion/static/js/main.6e167f05.js",
+    "index.html": "/sphariab/notion/index.html",
+    "main.f373c4fc.css.map": "/sphariab/notion/static/css/main.f373c4fc.css.map",
+    "main.6e167f05.js.map": "/sphariab/notion/static/js/main.6e167f05.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f373c4fc.css",
+    "static/js/main.6e167f05.js"
+  ]
+}
