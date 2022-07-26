@@ -1,0 +1,31 @@
+.field {
+  margin-bottom: 15px;
+  flex-direction: column;
+
+  &__title{
+    margin-bottom: 10px;
+   }
+
+  &__alert{
+    width: 100%;
+  }
+
+  &__input{
+    border: 1px solid #d9d9d9;
+    padding: 4px 11px;
+  }
+
+  .red{
+    background-color: rgb(251, 159, 168);
+    padding: 0;
+  }
+
+  .counter{
+    &-red{
+      color: red;
+    }
+    &-green{
+      color: green;
+    }
+  }
+}
