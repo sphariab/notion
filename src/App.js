@@ -1,6 +1,6 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import 'antd/dist/antd.css';
-import { Row, Button } from 'antd';
+import { Row } from 'antd';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NoteList from "./components/NoteList";
 import DetailNote from "./components/DetailNote";
@@ -26,22 +26,17 @@ const App = () => {
     const updateNotes = filteredNotes => {
         localStorage.setItem('notes',  JSON.stringify(filteredNotes));
         setNotes(filteredNotes);
-    }
+    };
 
     const deleteNote = id => {
         updateNotes(getNotes().filter(item => id !== item.id));
         selectNote(getNotes()[0]);
-    }
+    };
 
     const selectNote = selectedNote => {
         localStorage.setItem('selectedNote',  JSON.stringify(selectedNote));
         setSelectedNote(selectedNote);
-    }
-
-    const reset = () => {
-        localStorage.clear();
-        window.location.reload();
-    }
+    };
 
     const saveNote = note => {
         notes.find(x => x.id === note.id) ?
@@ -49,7 +44,7 @@ const App = () => {
             updateNotes([...notes, note]);
 
         selectNote(note);
-    }
+    };
 
     return (
         <Row  justify="space-evenly" style={{ marginTop: '10px'}}>
@@ -67,6 +62,6 @@ const App = () => {
             </BrowserRouter>
         </Row>
     );
-}
+};
 
 export default App;

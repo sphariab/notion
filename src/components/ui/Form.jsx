@@ -2,9 +2,10 @@ import { useEffect, useState, useRef } from 'react';
 import { Col, Row, Alert } from 'antd';
 import { useNavigate } from "react-router-dom";
 import { Input, Space, Button, InputNumber } from 'antd';
-import './styles.scss';
 import { HighlightWithinTextarea } from 'react-highlight-within-textarea'
 import { cleanCopiedCode } from "../../utils";
+import './styles.scss';
+
 
 const Form = ({ mode, saveNote, title = '', text = '', id }) => {
     const navigate = useNavigate();
@@ -25,18 +26,18 @@ const Form = ({ mode, saveNote, title = '', text = '', id }) => {
     const onChangeTitle = value => {
         setWarning(inputEl.current.props.value.length > titleMaxLength);
         setTitle(value);
-        setFormData({...formData, ['title']: value})
-    }
+        setFormData({...formData, title: value })
+    };
 
     const copyFromClipboard = () => {
         navigator.clipboard
             .readText()
             .then((copiedText) => {
-                setFormData({...formData, ['text']: cleanCopiedCode(copiedText) })
+                setFormData({...formData, text: cleanCopiedCode(copiedText) })
             });
-    }
+    };
 
-    const onChange = ({ target }) => setFormData({...formData, [target.name]: target.value})
+    const onChange = ({ target }) => setFormData({...formData, [target.name]: target.value });
 
     return (
         <Col span={10}>
@@ -66,7 +67,8 @@ const Form = ({ mode, saveNote, title = '', text = '', id }) => {
                 <div className='field__title'>Text</div>
                 <Input.TextArea
                     onChange={onChange}
-                    name='text' value={formData.text}
+                    name='text'
+                    value={formData.text}
                     onPaste={(e) => e.preventDefault()}
                 />
                 <Button onClick={() => copyFromClipboard()}>Copy from clipboard</Button>
@@ -76,7 +78,7 @@ const Form = ({ mode, saveNote, title = '', text = '', id }) => {
                     <Button
                         disabled={isMaxTitleLengthExceeded}
                         onClick={() => {
-                            saveNote({...formData, ['text']: cleanCopiedCode(formData.text)});
+                            saveNote({...formData, text: cleanCopiedCode(formData.text)});
                             navigate('/');
                         }}
                         type="primary">{mode === 'edit' ?  'Save' : 'Create'}
