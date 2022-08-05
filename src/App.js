@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "antd/dist/antd.min.css";
 import { Row } from "antd";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NoteList from "./components/NoteList";
@@ -6,7 +7,6 @@ import DetailNote from "./components/DetailNote";
 import CreateNote from "./components/CreateNote";
 import EditNote from "./components/EditNote";
 import { notesData } from "./notesMock.js";
-import "antd/dist/antd.min.css";
 
 const App = () => {
   const getNotes = () => JSON.parse(localStorage.getItem("notes"));

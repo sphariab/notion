@@ -79,6 +79,7 @@ const Form = ({ mode, saveNote, title = "", text = "", id }) => {
         <InputNumber
           onChange={(value) => setMaxLength(value)}
           defaultValue={20}
+          type="number"
         />
       </Row>
       <Row className="field">
