@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sphariab/notion/static/css/main.2479c993.css",
-    "main.js": "/sphariab/notion/static/js/main.99e08296.js",
-    "index.html": "/sphariab/notion/index.html",
-    "main.2479c993.css.map": "/sphariab/notion/static/css/main.2479c993.css.map",
-    "main.99e08296.js.map": "/sphariab/notion/static/js/main.99e08296.js.map"
+    "main.css": "/notion/static/css/main.2479c993.css",
+    "main.js": "/notion/static/js/main.e4580388.js",
+    "index.html": "/notion/index.html",
+    "main.2479c993.css.map": "/notion/static/css/main.2479c993.css.map",
+    "main.e4580388.js.map": "/notion/static/js/main.e4580388.js.map"
   },
   "entrypoints": [
     "static/css/main.2479c993.css",
-    "static/js/main.99e08296.js"
+    "static/js/main.e4580388.js"
   ]
 }
