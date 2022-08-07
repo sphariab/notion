@@ -48,7 +48,7 @@ const App = () => {
 
   return (
     <Row justify="space-evenly" style={{ marginTop: "10px" }}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<DetailNote note={selectedNote} />} />
           <Route path="create" element={<CreateNote saveNote={saveNote} />} />
