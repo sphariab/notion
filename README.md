@@ -1,9 +1,9 @@
 Notes
 
-### `npm install` - set up
+### `npm install` - install modules
 ### `npm start` - start app
 
-**DEMO:** https://sphariab.github.io/notion/
+**You can check it here:** https://sphariab.github.io/notion/
 
 **Technologies**: React, Antd, Sass, added eslint and prettier for preventing possible errors in code. 
 
