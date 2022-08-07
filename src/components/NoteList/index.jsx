@@ -7,6 +7,7 @@ import "./index.scss";
 
 const NoteList = ({ setSelectedNote, deleteNote, notes, saveNote }) => {
   const [notesItems, setNotes] = useState(notes);
+
   const onSearch = (value) => {
     const filteredNotes = notes.filter(
       (x) => x.title.includes(value) || x.text.includes(value),

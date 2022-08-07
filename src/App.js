@@ -21,9 +21,7 @@ const App = () => {
   }
 
   const [notes, setNotes] = useState(getNotes());
-  const [selectedNote, setSelectedNote] = useState(
-    JSON.parse(localStorage.getItem("selectedNote")),
-  );
+  const [selectedNote, setSelectedNote] = useState({});
 
   const updateNotes = (filteredNotes) => {
     localStorage.setItem("notes", JSON.stringify(filteredNotes));
